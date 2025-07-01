@@ -36,7 +36,7 @@ if st.button("Run Compliance Check"):
         # ## creating db 
         # db = FAISS.from_documents(chunks,embedding=embeddings)
         # Path where vector index is cached
-        VECTORSTORE_PATH = "vectorstore/fssai_index"
+        VECTORSTORE_PATH = "vectorstore"
         embedding_model = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
         if os.path.exists(VECTORSTORE_PATH):
             db = FAISS.load_local(VECTORSTORE_PATH, embeddings=embedding_model,allow_dangerous_deserialization = True)
